@@ -1,9 +1,30 @@
-#ifndef PERSONA_H_INCLUDED
-#define PERSONA_H_INCLUDED
+#pragma once
+class Persona{
+public:
+    Persona();
+    Persona(const char* dni, const char* nombre, const char* apellido, const char* telefono, bool estado);
 
-#include "Fecha.h"
-#include <iostream>
+    void setDni(const char* dni);
+    const char* getDni();
 
-using namespace std;
+    void setNombre(const char* nombre);
+    const char* getNombre();
 
-#endif // PERSONA_H_INCLUDED
+    void setApellido(const char* apellido);
+    const char* getApellido();
+
+    void setTelefono(const char* telefono);
+    const char* getTelefono();
+
+    void setEstado(bool estado);
+    bool getEstado();
+
+    void cargar();
+    void mostrar();
+private:
+    char _dni[20];
+    char _nombre[50];
+    char _apellido[50];
+    char _telefono[20];
+    bool _estado;
+};
