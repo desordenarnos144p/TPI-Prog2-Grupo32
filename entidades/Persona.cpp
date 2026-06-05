@@ -87,6 +87,11 @@ void Persona::setTelefono(const char* telefono)
 {
     int largo = strlen(telefono);
 
+    if(largo < 6 || largo > 15) {
+        strcpy(_telefono, "0");
+        return;
+    }
+
     for(int i=0; i<largo; i++)
     {
         if(telefono[i] < '0' || telefono[i] > '9')
