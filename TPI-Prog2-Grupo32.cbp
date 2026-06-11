@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TPI-Prog2-Grupo32" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TPI-Prog2-Grupo32" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TPI-Prog2-Grupo32" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="controladores/ManagerAgendaMedico.cpp" />
+		<Unit filename="controladores/ManagerAgendaMedico.h" />
+		<Unit filename="controladores/ManagerEspecialidad.cpp" />
+		<Unit filename="controladores/ManagerEspecialidad.h" />
+		<Unit filename="controladores/ManagerMedico.cpp" />
+		<Unit filename="controladores/ManagerMedico.h" />
+		<Unit filename="controladores/ManagerObrasSocial.cpp" />
+		<Unit filename="controladores/ManagerObrasSocial.h" />
+		<Unit filename="controladores/ManagerPaciente.cpp" />
+		<Unit filename="controladores/ManagerPaciente.h" />
+		<Unit filename="controladores/ManagerPago.cpp" />
+		<Unit filename="controladores/ManagerPago.h" />
+		<Unit filename="controladores/ManagerRol.cpp" />
+		<Unit filename="controladores/ManagerRol.h" />
+		<Unit filename="controladores/ManagerTurno.cpp" />
+		<Unit filename="controladores/ManagerTurno.h" />
+		<Unit filename="controladores/ManagerUsuario.cpp" />
+		<Unit filename="controladores/ManagerUsuario.h" />
+		<Unit filename="entidades/AgendaMedico.cpp" />
+		<Unit filename="entidades/AgendaMedico.h" />
+		<Unit filename="entidades/Especialidad.cpp" />
+		<Unit filename="entidades/Especialidad.h" />
+		<Unit filename="entidades/Medico.cpp" />
+		<Unit filename="entidades/Medico.h" />
+		<Unit filename="entidades/ObraSocial.cpp" />
+		<Unit filename="entidades/ObraSocial.h" />
+		<Unit filename="entidades/Paciente.cpp" />
+		<Unit filename="entidades/Paciente.h" />
+		<Unit filename="entidades/Pago.cpp" />
+		<Unit filename="entidades/Pago.h" />
+		<Unit filename="entidades/Persona.cpp" />
+		<Unit filename="entidades/Persona.h" />
+		<Unit filename="entidades/Rol.cpp" />
+		<Unit filename="entidades/Rol.h" />
+		<Unit filename="entidades/Turno.cpp" />
+		<Unit filename="entidades/Turno.h" />
+		<Unit filename="entidades/Usuario.cpp" />
+		<Unit filename="entidades/Usuario.h" />
+		<Unit filename="entidades/auxiliares/Fecha.cpp" />
+		<Unit filename="entidades/auxiliares/Fecha.h" />
+		<Unit filename="entidades/auxiliares/Hora.cpp" />
+		<Unit filename="entidades/auxiliares/Hora.h" />
+		<Unit filename="interfaz/MenuPrincipal.cpp" />
+		<Unit filename="interfaz/MenuPrincipal.h" />
+		<Unit filename="interfaz/SubMenuConsultas.cpp" />
+		<Unit filename="interfaz/SubMenuConsultas.h" />
+		<Unit filename="interfaz/SubMenuInformes.cpp" />
+		<Unit filename="interfaz/SubMenuInformes.h" />
+		<Unit filename="interfaz/SubmenuListados.cpp" />
+		<Unit filename="interfaz/SubmenuListados.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="persistencia/ArchivoAgendaMedico.cpp" />
+		<Unit filename="persistencia/ArchivoAgendaMedico.h" />
+		<Unit filename="persistencia/ArchivoEspecialidad.cpp" />
+		<Unit filename="persistencia/ArchivoEspecialidad.h" />
+		<Unit filename="persistencia/ArchivoMedico.cpp" />
+		<Unit filename="persistencia/ArchivoMedico.h" />
+		<Unit filename="persistencia/ArchivoObraSocial.cpp" />
+		<Unit filename="persistencia/ArchivoObraSocial.h" />
+		<Unit filename="persistencia/ArchivoPago.cpp" />
+		<Unit filename="persistencia/ArchivoPago.h" />
+		<Unit filename="persistencia/ArchivoRol.cpp" />
+		<Unit filename="persistencia/ArchivoRol.h" />
+		<Unit filename="persistencia/ArchivoTurno.cpp" />
+		<Unit filename="persistencia/ArchivoTurno.h" />
+		<Unit filename="persistencia/ArchivoUsuario.cpp" />
+		<Unit filename="persistencia/ArchivoUsuario.h" />
+		<Unit filename="persistencia/Archivopaciente.cpp" />
+		<Unit filename="persistencia/Archivopaciente.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
