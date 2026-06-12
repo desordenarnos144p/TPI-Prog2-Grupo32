@@ -1,6 +1,20 @@
-#ifndef MANAGERUSUARIO_H_INCLUDED
-#define MANAGERUSUARIO_H_INCLUDED
+#include "../entidades/Usuario.h"
 
+class ManagerUsuario{
+public:
+    ManagerUsuario();
 
+    bool agregar();
+    bool modificar();
+    bool eliminar();
 
-#endif // MANAGERUSUARIO_H_INCLUDED
+    Usuario buscarPorId(int id);
+    bool existe(int id);
+
+    void listar();
+
+    int getNuevoId();
+private:
+    ArchivoUsuario _repoUsuario;
+
+};
