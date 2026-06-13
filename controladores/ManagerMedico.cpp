@@ -168,7 +168,7 @@ void MedicoManager::listadoOrdenadoPorApellido()
         {
             if(strcmp(medPuntero[i].getApellido(), medPuntero[x].getApellido()) > 0)
             {
-                aux = medPuntero[x];
+                aux = medPuntero[i];
                 medPuntero[i] = medPuntero[x];
                 medPuntero[x] = aux;
             }
