@@ -1,8 +1,22 @@
-#ifndef HORA_H_INCLUDED
-#define HORA_H_INCLUDED
+#pragma once
 
-#include <iostream>
+class Hora{
+private:
+    int _hora;
+    int _minuto;
 
-using namespace std;
+public:
+    Hora();
+    Hora(int hora, int minuto);
 
-#endif // HORA_H_INCLUDED
+    void setHora(int hora);
+    void setMinuto(int minuto);
+
+    int getHora();
+    int getMinuto();
+
+    bool validarHora();
+
+    void cargar();
+    void mostrar();
+};
