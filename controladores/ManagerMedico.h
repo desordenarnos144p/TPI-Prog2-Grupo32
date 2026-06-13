@@ -7,7 +7,7 @@ public:
     MedicoManager();
     void cargarMedico();
     void eliminarMedico();
-    void listar();
+    void listar(); //luego mejorar !!
     void modificarMatricula();
 
     //LISTADOS
