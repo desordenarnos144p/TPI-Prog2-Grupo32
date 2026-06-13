@@ -1,6 +1,14 @@
-#ifndef MANAGERPACIENTE_H_INCLUDED
-#define MANAGERPACIENTE_H_INCLUDED
+#pragma once
 
+#include "../persistencia/ArchivoPaciente.h"
 
+class ManagerPaciente{
+private:
+    ArchivoPaciente _repoPaciente;
 
-#endif // MANAGERPACIENTE_H_INCLUDED
+public:
+    void cargarPaciente();
+    void listarPacientes();
+    void modificarPaciente();
+    void eliminarPaciente();
+};

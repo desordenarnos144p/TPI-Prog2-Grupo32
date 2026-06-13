@@ -1,6 +1,18 @@
-#ifndef ARCHIVOPACIENTE_H_INCLUDED
-#define ARCHIVOPACIENTE_H_INCLUDED
+#pragma once
 
+#include "../entidades/Paciente.h"
 
+class ArchivoPaciente{
+private:
+    char _nombreArchivo[30];
 
-#endif // ARCHIVOPACIENTE_H_INCLUDED
+public:
+    ArchivoPaciente(const char* nombreArchivo = "Pacientes.dat");
+
+    bool guardar(Paciente reg);
+    Paciente leer(int pos);
+    bool modificar(Paciente reg, int pos);
+
+    int getCantidadRegistros();
+    int getNuevoId();
+};

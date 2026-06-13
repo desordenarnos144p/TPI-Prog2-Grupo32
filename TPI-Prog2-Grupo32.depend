@@ -147,3 +147,149 @@
 1781198687 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32-main\tpi-prog2-grupo32-main\persistencia\archivopaciente.h
 	"../entidades/Paciente.h"
 
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\manageragendamedico.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerespecialidad.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managermedico.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerobrassocial.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerpago.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerrol.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerturno.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerusuario.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\agendamedico.cpp
+	"AgendaMedico.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\agendamedico.h
+	"auxiliares/Fecha.h"
+	"auxiliares/Hora.h"
+	<iostream>
+
+1781273750 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\auxiliares\fecha.h
+
+1781273751 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\auxiliares\hora.h
+
+1781273748 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\auxiliares\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1781273745 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\auxiliares\hora.cpp
+	<iostream>
+	"Hora.h"
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\especialidad.cpp
+	"Especialidad.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\especialidad.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\medico.cpp
+	"Medico.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\medico.h
+	"Persona.h"
+	<iostream>
+
+1781274306 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\persona.h
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\obrasocial.cpp
+	"ObraSocial.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\obrasocial.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\pago.cpp
+	"Pago.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\pago.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\persona.cpp
+	<iostream>
+	"Persona.h"
+	<cstring>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\rol.cpp
+	"Rol.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\rol.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\turno.cpp
+	"Turno.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\turno.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\usuario.cpp
+	"Usuario.h"
+	<iostream>
+
+1781273124 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\usuario.h
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\interfaz\menuprincipal.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\interfaz\submenuconsultas.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\interfaz\submenuinformes.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\interfaz\submenulistados.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivoagendamedico.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivoespecialidad.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivomedico.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivoobrasocial.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivopago.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivorol.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivoturno.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivousuario.cpp
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerpaciente.cpp
+	"ManagerPaciente.h"
+	<iostream>
+
+1781274570 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\controladores\managerpaciente.h
+	"../persistencia/ArchivoPaciente.h"
+
+1781274570 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivopaciente.h
+	"../entidades/Paciente.h"
+
+1781274752 c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\paciente.h
+	"Persona.h"
+	"auxiliares/Fecha.h"
+
+1781274360 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\entidades\paciente.cpp
+	"Paciente.h"
+	<cstring>
+	<iostream>
+
+1781273124 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\persistencia\archivopaciente.cpp
+	"ArchivoPaciente.h"
+	<cstdio>
+	<cstring>
+
+1781275834 source:c:\users\roodr\desktop\utn\2docuatrimestre\tpi-prog2-grupo32\main.cpp
+	<iostream>
+	"entidades/Paciente.h"
+

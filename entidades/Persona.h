@@ -21,7 +21,7 @@ public:
 
     void cargar();
     void mostrar();
-private:
+protected:
     char _dni[20];
     char _nombre[50];
     char _apellido[50];
