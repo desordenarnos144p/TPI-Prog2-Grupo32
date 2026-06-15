@@ -2,10 +2,10 @@
 
 class ArchivoTurno{
     private:
-        char nombreArchivo[20];
+        char _nombreArchivo[20];
     public:
         //CONSTRUCTOR.
-            ArchivoTurno();
+            ArchivoTurno(const char* nombreArchivo = "Turnos.dat");
         //GETTERS.
             int getNuevoId();
             int getCantidadRegistros();
