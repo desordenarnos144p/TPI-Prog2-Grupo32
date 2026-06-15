@@ -16,7 +16,7 @@ using namespace std;
         _estado = false;
     }
     Turno::Turno(int idTurno, int idPaciente, int agendaMedico, Fecha fecha, Hora hora, bool estado){
-    setIdTurno(archivoTurno.getNuevoId());
+    setIdTurno(idTurno);
     setIdPaciente(idPaciente);
     setIdAgendaMedico(agendaMedico);
     setFecha(fecha);
@@ -67,7 +67,9 @@ using namespace std;
     }
 
 //METODOS
+/*
 void Turno::ingresarDatos(){
+
     int idPaciente, idAgendaMedico;
     Fecha fecha;
     Hora hora;
@@ -82,7 +84,27 @@ void Turno::ingresarDatos(){
     hora.cargar();  
     setHora(hora);
     setEstado(true);
-    cout << "Turno cargado correctamente!" << endl;
+    cout << "Turno cargado correcamente!" << endl;
+
+    cout << "ID paciente: " << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+}
+*/
+
+void Turno::ingresarDatos(){
+    cout << "ID Paciente: ";
+    cin >> _idPaciente;
+    cout << "ID Agenda Medico: ";
+    cin >> _idAgendaMedico;
+    cin.ignore(); 
+    cout << "---Datos de la fecha---" << endl;
+    _fecha.cargar();
+    cout << "---Datos de la hora---" << endl;
+    _hora.cargar();
+    _estado = true;
 }
 
 void Turno::mostrar(){

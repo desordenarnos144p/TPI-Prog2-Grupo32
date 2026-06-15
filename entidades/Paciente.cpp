@@ -5,10 +5,8 @@
 using namespace std;
 
 Paciente::Paciente(){
-
     _idPaciente = 0;
     _idObraSocial = 0;
-
     strcpy(_nroAfiliado, "SIN AFILIADO");
     strcpy(_antecedentes, "SIN ANTECEDENTES");
 }
@@ -25,13 +23,10 @@ Paciente::Paciente(
     const char* telefono,
     bool estado
 ) : Persona(dni, nombre, apellido, telefono, estado){
-
     _idPaciente = idPaciente;
     _idObraSocial = idObraSocial;
-
     strcpy(_nroAfiliado, nroAfiliado);
     strcpy(_antecedentes, antecedentes);
-
     _fechaNacimiento = fechaNacimiento;
 }
 
@@ -76,35 +71,25 @@ Fecha Paciente::getFechaNacimiento(){
 }
 
 void Paciente::cargar(){
-
     Persona::cargar();
-
     cout << "ID Obra Social: ";
     cin >> _idObraSocial;
-
     cin.ignore();
-
     cout << "Numero Afiliado: ";
     cin.getline(_nroAfiliado,30);
-
     cout << "Antecedentes: ";
     cin.getline(_antecedentes,300);
-
     cout << "Fecha de nacimiento:" << endl;
     _fechaNacimiento.cargar();
 }
 
 void Paciente::mostrar(){
-
     Persona::mostrar();
-
     cout << "ID Paciente: " << _idPaciente << endl;
     cout << "ID Obra Social: " << _idObraSocial << endl;
     cout << "Numero Afiliado: " << _nroAfiliado << endl;
     cout << "Antecedentes: " << _antecedentes << endl;
-
     cout << "Fecha Nacimiento: ";
     _fechaNacimiento.mostrar();
-
     cout << endl;
 }

@@ -1,8 +1,7 @@
-#ifndef PAGO_H_INCLUDED
-#define PAGO_H_INCLUDED
+#pragma once 
 
-#include <iostream>
-
-using namespace std;
-
-#endif // PAGO_H_INCLUDED
+class Pago{
+    private:
+        int _idPago;
+        int _idTurno;
+};

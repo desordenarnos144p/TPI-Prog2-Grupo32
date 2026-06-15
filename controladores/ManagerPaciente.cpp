@@ -9,15 +9,13 @@ void ManagerPaciente::cargarPaciente(){
 
     reg.cargar();
 
-    reg.setIdPaciente(
-        _repoPaciente.getNuevoId()
-    );
+    reg.setIdPaciente(_repoPaciente.getNuevoId());
 
     if(_repoPaciente.guardar(reg)){
-        cout << "PACIENTE GUARDADO CORRECTAMENTE" << endl;
+        cout << "PACIENTE GUARDADO CORRECTAMENTE..." << endl;
     }
     else{
-        cout << "ERROR AL GUARDAR PACIENTE" << endl;
+        cout << "ERROR AL GUARDAR PACIENTE..." << endl;
     }
 }
 
@@ -40,12 +38,12 @@ void ManagerPaciente::modificarPaciente(){
 
     cout << "MODIFICAR PACIENTE" << endl;
 
-    // implementar después
+    // implementar despuï¿½s
 }
 
 void ManagerPaciente::eliminarPaciente(){
 
     cout << "ELIMINAR PACIENTE" << endl;
 
-    // implementar después
+    // implementar despuï¿½s
 }
