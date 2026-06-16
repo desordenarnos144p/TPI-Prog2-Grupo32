@@ -1,8 +1,6 @@
 #include "Turno.h"
 #include <iostream>
 #include "../persistencia/ArchivoTurno.h"
-#include "../persistencia/ArchivoPaciente.h"
-#include "../persistencia/ArchivoAgendaMedico.h"
 
 using namespace std;
 
@@ -67,59 +65,32 @@ using namespace std;
     }
 
 //METODOS
-/*
-void Turno::ingresarDatos(){
-
-    int idPaciente, idAgendaMedico;
-    Fecha fecha;
-    Hora hora;
-    cout << "---REGISTRAR NUEVO TURNO---" << endl;
-    setIdTurno(archivoTurno.getNuevoId());
-    setIdPaciente(archivoPaciente.getNuevoId());
-    setIdAgendaMedico(archivoMedico.getNuevoId());  
-    cout << "--- Datos de la fecha ---" << endl;
-    fecha.cargar(); 
-    setFecha(fecha);
-    cout << "---Datos de la hora---" << endl;
-    hora.cargar();  
-    setHora(hora);
-    setEstado(true);
-    cout << "Turno cargado correcamente!" << endl;
-
-    cout << "ID paciente: " << endl;
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
-}
-*/
-
-void Turno::ingresarDatos(){
-    cout << "ID Paciente: ";
-    cin >> _idPaciente;
-    cout << "ID Agenda Medico: ";
-    cin >> _idAgendaMedico;
-    cin.ignore(); 
-    cout << "---Datos de la fecha---" << endl;
-    _fecha.cargar();
-    cout << "---Datos de la hora---" << endl;
-    _hora.cargar();
-    _estado = true;
-}
-
-void Turno::mostrar(){
-    if (!getEstado()) {
-        cout << "[Turno Inactivo / Cancelado]" << endl;
-        return;
+    void Turno::ingresarDatos(){
+        cout << "ID Paciente: ";
+        cin >> _idPaciente;
+        cout << "ID Agenda Medico: ";
+        cin >> _idAgendaMedico;
+        cin.ignore();
+        cout << "---Datos de la fecha---" << endl;
+        _fecha.cargar();
+        cout << "---Datos de la hora---" << endl;
+        _hora.cargar();
+        _estado = true;
     }
-    cout << "DETALLE DEL TURNO Nro: " << getIdTurno() << endl;
-    cout << "------------------------" << endl;
-    cout << "ID Paciente Asignado: " << getIdPaciente() << endl;
-    cout << "ID Agenda del Medico: " << getIdAgendaMedico() << endl;
-    cout << "Fecha del Turno: "; 
-    getFecha().mostrar(); 
-    cout << endl;
-    cout << "Hora del Turno: "; 
-    getHora().mostrar();  
-    cout << endl;
+
+    void Turno::mostrar(){
+        if(!getEstado()){
+            cout << "[Turno inactivo / cancelado]" << endl;
+            return;
+        }
+        cout << "DETALLE DEL TURNO Nro: " << getIdTurno() << endl;
+        cout << "-----------------------" << endl;
+        cout << "ID Paciente asignado: " << getIdPaciente() << endl;
+        cout << "ID Agenda del Medico: " << getIdAgendaMedico() << endl;
+        cout << "Fecha del turno: "; 
+        getFecha().mostrar(); 
+        cout << endl;
+        cout << "Hora del Turno: "; 
+        getHora().mostrar();  
+        cout << endl;
 }

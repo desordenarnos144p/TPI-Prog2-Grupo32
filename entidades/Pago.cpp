@@ -82,11 +82,3 @@ Pago::Pago(int idPago, int idTurno, float monto, Fecha fecha, bool estado){
         getFecha().mostrar();
         cout << endl;
     }
-
-/*
-    int _idPago;
-    int _idTurno;
-    float _monto;
-    Fecha _fecha;
-    bool _estado;
-*/

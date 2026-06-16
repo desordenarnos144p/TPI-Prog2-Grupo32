@@ -4,6 +4,7 @@
 #include "entidades/auxiliares/Hora.h"
 
 using namespace std;
+
 //CONSTRUCTOR.
     ManagerTurno::ManagerTurno(){}
 //METODOS.
@@ -12,7 +13,7 @@ bool ManagerTurno::agregar(){
     reg.ingresarDatos();
     reg.setIdTurno(_repoTurno.getNuevoId());
     bool exito = _repoTurno.guardar(reg); 
-    if (exito) {
+    if (exito){
         cout << "\nTurno registrado correctamente!" << endl;
         return true;
     } else {
