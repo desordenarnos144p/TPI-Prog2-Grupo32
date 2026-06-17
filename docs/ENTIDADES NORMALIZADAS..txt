@@ -9,20 +9,20 @@ ManagerEspecialidad.h : Pendiente.
 ManagerMedico.cpp : Modificar.
 ManagerMedico.h : Modificar.
 
-ManagerObraSocial.cpp
+ManagerObraSocial.cpp : Modificar.
 ManagerObraSocial.h : Modificar.
 
-ManagerPaciente.cpp
+ManagerPaciente.cpp : Modificar.
 ManagerPaciente.h : Modificar.
 
-ManagerPago.cpp
+ManagerPago.cpp Normalizado.
 ManagerPago.h : Normalizado.
 
-ManagerRol.cpp
+ManagerRol.cpp : Pendiente.
 ManagerRol.h : Pendiente.
 
-ManagerTurno.cpp
+ManagerTurno.cpp : Normalizado.
 ManagerTurno.h : Normalizado.
 
-ManagerUsuario.cpp
+ManagerUsuario.cpp : Normalizado.
 ManagerUsuario.h : Normalizado.
