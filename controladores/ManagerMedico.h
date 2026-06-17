@@ -1,25 +1,26 @@
 #pragma once
-#include "MedicoArchivo.h"
-#include "EspecialidadArchivo.h"
 
-class MedicoManager{
-public:
-    MedicoManager();
-    void cargarMedico();
-    void eliminarMedico();
-    void listar(); //luego mejorar !!
-    void modificarMatricula();
+#include "persistencia/ArchivoMedico.h"
+#include "entidades/Medico.h"
+//#include "EspecialidadArchivo.h" //¿Por que se incluye especialidad archivo?
 
-    //LISTADOS
-    void listadoOrdenadoPorApellido();
-    void listadoOrdenadoPorEspecialidad();
-
-    //CONSULTAS
-    //.......
-
-    //AYUDANTES
-    void pedirMatriculaNuevaAlUsuario(char* matriculaDestino);
-private:
-    MedicoArchivo _repoMedico;
-    EspecialidadArchivo _repoEspecialidad;
+class ManagerMedico{
+    private:
+        MedicoArchivo _repoMedico;
+        //EspecialidadArchivo _repoEspecialidad; //¿Por que se declara _repoEspecialidad?
+    public:
+        //CONSTRUCTOR.
+            ManagerMedico();
+        //METODOS.
+            void agregar();
+            //AGREGAR: bool modificar();
+            void bajaLogica();
+            //AGREGAR: Medico buscarPorId(int id);
+            //AGREGAR: bool existe(int id);
+            void listar(); //luego mejorar.
+            void modificarMatricula();
+            void listarPorApellido();
+            void listarPorEspecialidad();
+        //AYUDANTES
+            void pedirMatriculaAlUsuario(char* matriculaDestino); //Esta funcion la cumple agregar.
 };

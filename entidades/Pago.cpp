@@ -40,6 +40,7 @@ Pago::Pago(int idPago, int idTurno, float monto, Fecha fecha, bool estado){
     }
     void Pago::setMonto(float monto){
         _monto = monto;
+        //AGREGAR VALIDACIONES.
     }
 
     Fecha Pago::getFecha(){

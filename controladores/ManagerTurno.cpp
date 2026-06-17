@@ -8,7 +8,7 @@ using namespace std;
 //CONSTRUCTOR.
     ManagerTurno::ManagerTurno(){}
 //METODOS.
-bool ManagerTurno::agregar(){
+    bool ManagerTurno::agregar(){
     Turno reg; 
     reg.ingresarDatos();
     reg.setIdTurno(_repoTurno.getNuevoId());

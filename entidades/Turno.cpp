@@ -85,6 +85,7 @@ using namespace std;
         }
         cout << "DETALLE DEL TURNO Nro: " << getIdTurno() << endl;
         cout << "-----------------------" << endl;
+        //CAMBIAR ID PACIENTE POR DNI.
         cout << "ID Paciente asignado: " << getIdPaciente() << endl;
         cout << "ID Agenda del Medico: " << getIdAgendaMedico() << endl;
         cout << "Fecha del turno: "; 

@@ -7,7 +7,7 @@ using namespace std;
 ObraSocial::ObraSocial()
 {
    _idObraSocial =0;
-    std::strcpy(_nombre, "Sin nombre");
+    strcpy(_nombre, "Sin nombre");
     _estado = false;
 }
 

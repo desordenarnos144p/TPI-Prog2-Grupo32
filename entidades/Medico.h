@@ -20,7 +20,6 @@ public:
     void cargar(const char* matricula = 0, int idMedico = 0);
     void mostrar();
 
-
     bool validarMatricula(const char* matricula);
 private:
     int _idMedico;

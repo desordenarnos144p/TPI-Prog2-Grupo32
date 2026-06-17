@@ -1,0 +1,28 @@
+ENTIDADES NORMALIZADAS.
+
+ManagerAgendaMedico.cpp : Pendiente.
+ManagerAgendaMedico.h : Pendiente.
+
+ManagerEspecialidad.cpp : Pendiente.
+ManagerEspecialidad.h : Pendiente.
+
+ManagerMedico.cpp : Modificar.
+ManagerMedico.h : Modificar.
+
+ManagerObraSocial.cpp
+ManagerObraSocial.h : Modificar.
+
+ManagerPaciente.cpp
+ManagerPaciente.h : Modificar.
+
+ManagerPago.cpp
+ManagerPago.h : Normalizado.
+
+ManagerRol.cpp
+ManagerRol.h : Pendiente.
+
+ManagerTurno.cpp
+ManagerTurno.h : Normalizado.
+
+ManagerUsuario.cpp
+ManagerUsuario.h : Normalizado.

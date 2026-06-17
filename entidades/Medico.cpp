@@ -1,12 +1,13 @@
 #include <iostream>
 #include "Medico.h"
 #include <cstring>
+
 using namespace std;
 
 Medico::Medico()
     : Persona(), _idMedico(0), _idEspecialidad(0)
 {
-    std::strcpy(_matricula, "0");
+    strcpy(_matricula, "0");
 }
 
 Medico::Medico(const char* dni, const char* nombre, const char* apellido, const char* telefono, bool estado, int idMedico, const char* matricula, int idEspecialidad)

@@ -3,47 +3,47 @@
 
 using namespace std;
 
-void ManagerPaciente::cargarPaciente(){
-
-    Paciente reg;
-
-    reg.cargar();
-
-    reg.setIdPaciente(_repoPaciente.getNuevoId());
-
-    if(_repoPaciente.guardar(reg)){
-        cout << "PACIENTE GUARDADO CORRECTAMENTE..." << endl;
-    }
-    else{
-        cout << "ERROR AL GUARDAR PACIENTE..." << endl;
-    }
-}
-
-void ManagerPaciente::listarPacientes(){
-
-    int cantidad = _repoPaciente.getCantidadRegistros();
-
-    for(int i=0; i<cantidad; i++){
-
-        Paciente reg = _repoPaciente.leer(i);
-
-        if(reg.getEstado()){
-            reg.mostrar();
-            cout << endl;
+//CONSTRUCTOR.
+    ManagerPaciente::ManagerPaciente(){}
+//METODOS.
+    void ManagerPaciente::agregar(){
+        Paciente reg;
+        reg.cargar();
+        reg.setIdPaciente(_repoPaciente.getNuevoId());
+        if(_repoPaciente.guardar(reg)){
+            cout << "PACIENTE GUARDADO CORRECTAMENTE..." << endl;
+        } else {
+            cout << "ERROR AL GUARDAR PACIENTE..." << endl;
         }
     }
-}
 
-void ManagerPaciente::modificarPaciente(){
+    void ManagerPaciente::modificar(){
+        cout << "MODIFICAR PACIENTE" << endl;
+        // implementar despu�s
+    }
 
-    cout << "MODIFICAR PACIENTE" << endl;
+    void ManagerPaciente::bajaLogica(){
+        cout << "ELIMINAR PACIENTE" << endl;
+        // implementar despu�s
+    }
 
-    // implementar despu�s
-}
+    //AGREGAR: Paciente buscarPorId(int id);
 
-void ManagerPaciente::eliminarPaciente(){
+    //AGREGAR: bool existe(int id);
 
-    cout << "ELIMINAR PACIENTE" << endl;
+    void ManagerPaciente::listar(){
+        int cantidad = _repoPaciente.getCantidadRegistros();
+        for(int i = 0; i < cantidad; i++){
+            Paciente reg = _repoPaciente.leer(i);
+            if(reg.getEstado()){
+                reg.mostrar();
+                cout << endl;
+            }
+        }
+    }
 
-    // implementar despu�s
-}
+    //AGREGAR: void listarPorNombre();
+
+    //AGREGAR: void listarPorEdad();
+    
+    //AGREGAR: void listarPorObraSocial();
