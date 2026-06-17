@@ -1,97 +1,74 @@
-#include "MedicoArchivo.h"
-#include <stdio.h>
+#include <cstdio>
 #include <cstring>
+#include "ArchivoMedico.h"
+#include "../controladores/ManagerMedico.h"
 
-MedicoArchivo::MedicoArchivo(const char* nombreArchivo)
-{
-    std::strcpy(_nombreArchivo, nombreArchivo);
-}
-
-
-bool MedicoArchivo::guardar(const Medico &reg)
-{
-    FILE *p = fopen(_nombreArchivo, "ab");
-    if(p==nullptr)
-    {
-        return false;
+//CONSTRUCTOR.
+    ArchivoMedico::ArchivoMedico(const char* nombreArchivo){
+        strcpy(_nombreArchivo, nombreArchivo);
     }
 
-    int cant = fwrite(&reg, sizeof(Medico), 1, p);
-    fclose(p);
-    return cant;
-}
+//GETTERS.
+    int ArchivoMedico::getNuevoId(){
+        return getCantidadRegistros() + 1;
+    }
 
+    int ArchivoMedico::getCantidadRegistros(){
+        FILE *p = fopen(_nombreArchivo, "rb");
+        if(p == nullptr){
+            return 0;
+        }
+        fseek(p, 0, SEEK_END);
+        int tamTotal = ftell(p) / sizeof(Medico);
+        fclose(p);
+        return tamTotal;
+    }
 
-Medico MedicoArchivo::leer(int pos)
-{
-    Medico reg;
-    FILE *p = fopen(_nombreArchivo, "rb");
-    if(p==nullptr)
-    {
+//METODOS.
+    bool ArchivoMedico::guardar(const Medico &reg){
+        FILE *p = fopen(_nombreArchivo, "ab");
+        if(p == nullptr){
+            return false;
+        }
+        int cant = fwrite(&reg, sizeof(Medico), 1, p);
+        fclose(p);
+        return cant;
+    }
+
+    Medico ArchivoMedico::leer(int pos){
+        Medico reg;
+        FILE *p = fopen(_nombreArchivo, "rb");
+        if(p == nullptr){
+            return reg;
+        }
+        fseek(p, pos * sizeof(Medico), SEEK_SET);
+        int leer = fread(&reg, sizeof(Medico), 1, p);
+        fclose(p);
         return reg;
     }
 
-    fseek(p, pos * sizeof(Medico), SEEK_SET);
-    int leer = fread(&reg, sizeof(Medico), 1, p);
+    //AGREGAR: int buscarPosicion(int id);
 
-    fclose(p);
-    return reg;
-}
-
-
-int MedicoArchivo::getCantidadRegistros()
-{
-    FILE *p = fopen(_nombreArchivo, "rb");
-    if(p==nullptr)
-    {
-        return 0;
+    bool ArchivoMedico::modificar(const Medico &reg, int pos){
+        FILE *p = fopen(_nombreArchivo, "rb+");
+        if(p == nullptr){
+            return false;
+        }
+        fseek(p, pos * sizeof(Medico), SEEK_SET);
+        bool escribio = fwrite(&reg, sizeof(Medico), 1, p);
+        fclose(p);
+        return escribio;
     }
 
-    fseek(p, 0, SEEK_END);
-    int tamTotal = ftell(p) / sizeof(Medico);
+    //AGREGAR: bool bajaLogica(int posicion);
 
-    fclose(p);
-    return tamTotal;
-}
-
-
-
-bool MedicoArchivo::modificar(const Medico &reg, int pos)
-{
-    FILE *p = fopen(_nombreArchivo, "rb+");
-    if(p==nullptr)
-    {
-        return false;
+    int ArchivoMedico::buscarPosicion(int id){
+        int cantidad = getCantidadRegistros();
+        for(int i = 0; i < cantidad; i++){
+            Medico reg = leer(i);
+            if(reg.getIdMedico() == id && reg.getEstado() == true){
+                return i;
+            }
+        }
+        return -1;
     }
-
-    fseek(p, pos * sizeof(Medico), SEEK_SET);
-    bool escribio = fwrite(&reg, sizeof(Medico), 1, p);
-
-    fclose(p);
-    return escribio;
-}
-
-
-int MedicoArchivo::getNuevoId()
-{
-    return getCantidadRegistros() + 1;
-}
-
-
-
-
-int MedicoArchivo::buscarMedico(const char* matricula)
-{
-    Medico med;
-    int cant = getCantidadRegistros();
-
-    for(int i=0; i<cant; i++)
-        med = leer(i);
-
-    if(med.getEstado() == true && strcmp(med.getMatricula(), matricula) == 0)
-    {
-        return i;
-    }
-}
-return -1;
-}
