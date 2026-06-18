@@ -1,6 +1,26 @@
-#ifndef MANAGERMEDICO_H_INCLUDED
-#define MANAGERMEDICO_H_INCLUDED
+#pragma once
 
+#include "persistencia/ArchivoMedico.h"
+#include "entidades/Medico.h"
+//#include "EspecialidadArchivo.h" //¿Por que se incluye especialidad archivo?
 
-
-#endif // MANAGERMEDICO_H_INCLUDED
+class ManagerMedico{
+    private:
+        MedicoArchivo _repoMedico;
+        //EspecialidadArchivo _repoEspecialidad; //¿Por que se declara _repoEspecialidad?
+    public:
+        //CONSTRUCTOR.
+            ManagerMedico();
+        //METODOS.
+            void agregar();
+            //AGREGAR: bool modificar();
+            void bajaLogica();
+            //AGREGAR: Medico buscarPorId(int id);
+            //AGREGAR: bool existe(int id);
+            void listar(); //luego mejorar.
+            void modificarMatricula();
+            void listarPorApellido();
+            void listarPorEspecialidad();
+        //AYUDANTES
+            void pedirMatriculaAlUsuario(char* matriculaDestino); //Esta funcion la cumple agregar.
+};

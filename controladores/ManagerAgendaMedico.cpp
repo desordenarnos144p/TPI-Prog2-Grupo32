@@ -5,95 +5,95 @@ using namespace std;
 
 void ManagerAgendaMedico::cargarAgenda(){
 
-    AgendaMedico reg;
+  AgendaMedico reg;
 
-    reg.cargar();
+  reg.cargar();
 
-    reg.setIdAgenda(
-        _repoAgenda.getNuevoId()
-    );
+  reg.setIdAgenda(
+    _repoAgenda.getNuevoId()
+  );
 
-    if(_repoAgenda.guardar(reg)){
-        cout << "AGENDA GUARDADA CORRECTAMENTE" << endl;
-    }
-    else{
-        cout << "ERROR AL GUARDAR AGENDA" << endl;
-    }
+  if(_repoAgenda.guardar(reg)){
+    cout << "AGENDA GUARDADA CORRECTAMENTE" << endl;
+  }
+  else{
+    cout << "ERROR AL GUARDAR AGENDA" << endl;
+  }
 }
 void ManagerAgendaMedico::listarAgendas(){
 
-    int cantidad =
-        _repoAgenda.getCantidadRegistros();
+  int cantidad =
+    _repoAgenda.getCantidadRegistros();
 
-    for(int i = 0; i < cantidad; i++){
+  for(int i = 0; i < cantidad; i++){
 
-        AgendaMedico reg =
-            _repoAgenda.leer(i);
+    AgendaMedico reg =
+      _repoAgenda.leer(i);
 
-        if(reg.getEstado()){
+    if(reg.getEstado()){
 
-            reg.mostrar();
+      reg.mostrar();
 
-            cout << endl;
-        }
+      cout << endl;
     }
+  }
 }
 void ManagerAgendaMedico::eliminarAgenda(){
 
-    int idAgenda;
+  int idAgenda;
 
-    cout << "ID Agenda: ";
-    cin >> idAgenda;
+  cout << "ID Agenda: ";
+  cin >> idAgenda;
 
-    int pos =
-        _repoAgenda.buscarPorId(idAgenda);
+  int pos =
+    _repoAgenda.buscarPorId(idAgenda);
 
-    if(pos == -1){
+  if(pos == -1){
 
-        cout << "NO EXISTE LA AGENDA" << endl;
+    cout << "NO EXISTE LA AGENDA" << endl;
 
-        return;
-    }
+    return;
+  }
 
-    AgendaMedico reg =
-        _repoAgenda.leer(pos);
+  AgendaMedico reg =
+    _repoAgenda.leer(pos);
 
-    reg.setEstado(false);
+  reg.setEstado(false);
 
-    if(_repoAgenda.modificar(reg, pos)){
+  if(_repoAgenda.modificar(reg, pos)){
 
-        cout << "AGENDA ELIMINADA" << endl;
-    }
+    cout << "AGENDA ELIMINADA" << endl;
+  }
 }
 void ManagerAgendaMedico::modificarAgenda(){
 
-    int idAgenda;
+  int idAgenda;
 
-    cout << "ID Agenda: ";
-    cin >> idAgenda;
+  cout << "ID Agenda: ";
+  cin >> idAgenda;
 
-    int pos =
-        _repoAgenda.buscarPorId(idAgenda);
+  int pos =
+    _repoAgenda.buscarPorId(idAgenda);
 
-    if(pos == -1){
+  if(pos == -1){
 
-        cout << "NO EXISTE LA AGENDA" << endl;
+    cout << "NO EXISTE LA AGENDA" << endl;
 
-        return;
-    }
+    return;
+  }
 
-    AgendaMedico reg =
-        _repoAgenda.leer(pos);
+  AgendaMedico reg =
+    _repoAgenda.leer(pos);
 
-    cout << endl;
-    cout << "NUEVOS DATOS" << endl;
+  cout << endl;
+  cout << "NUEVOS DATOS" << endl;
 
-    reg.cargar();
+  reg.cargar();
 
-    reg.setIdAgenda(idAgenda);
+  reg.setIdAgenda(idAgenda);
 
-    if(_repoAgenda.modificar(reg, pos)){
+  if(_repoAgenda.modificar(reg, pos)){
 
-        cout << "AGENDA MODIFICADA" << endl;
-    }
+    cout << "AGENDA MODIFICADA" << endl;
+  }
 }

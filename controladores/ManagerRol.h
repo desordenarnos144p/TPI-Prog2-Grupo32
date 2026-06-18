@@ -1,6 +1,3 @@
-#ifndef MANAGERROL_H_INCLUDED
-#define MANAGERROL_H_INCLUDED
+#pragma once
 
-
-
-#endif // MANAGERROL_H_INCLUDED
+//PENDIENTE.

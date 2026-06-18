@@ -4,19 +4,24 @@
 
 class ManagerPaciente{
 private:
-    ArchivoPaciente _repoPaciente;
+  ArchivoPaciente _repoPaciente;
 
 public:
-    void cargarPaciente();
-    void listarPacientes();
-    void modificarPaciente();
-    void eliminarPaciente();
+  //CONSTRUCTOR
+  ManagerPaciente();
 
-    //listado de paciente
+  //METODOS
+  void cargarPaciente();
+  void listarPacientes();
+  void modificarPaciente();
+  void eliminarPaciente();
 
-    void listadoOrdenadoPorApellido();
+  void listadoOrdenadoPorApellido();
 
-    //listar por obra social
-
-    //void listadoOrdenadoPorObraSocial();
+  // METODOS PENDIENTES DE IMPLEMENTAR (COMENTADOS):
+  // Paciente buscarPorId(int id);
+  // bool existe(int id);
+  // void listarPorNombre();
+  // void listarPorEdad();
+  // void listarPorObraSocial();
 };

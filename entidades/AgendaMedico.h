@@ -4,45 +4,36 @@
 #include "auxiliares/Hora.h"
 
 class AgendaMedico{
-
 private:
-
-    int _idAgenda;
-    int _idMedico;
-    Fecha _fecha;
-    Hora _hora;
-    bool _disponible;
-    bool _estado;
+  int _idAgenda;
+  int _idMedico;
+  Fecha _fecha;
+  Hora _hora;
+  bool _disponible;
+  bool _estado;
 
 public:
+  AgendaMedico();
+  AgendaMedico(int idAgenda, int idMedico, Fecha fecha, Hora hora, bool disponible, bool estado);
 
-    AgendaMedico();
+  void setIdAgenda(int idAgenda);
+  int getIdAgenda();
 
-    AgendaMedico(int idAgenda, int idMedico, Fecha fecha, Hora hora, bool disponible, bool estado);
+  void setIdMedico(int idMedico);
+  int getIdMedico();
 
+  void setFecha(Fecha fecha);
+  Fecha getFecha();
 
-    void setIdAgenda(int idAgenda);
-    int getIdAgenda();
+  void setHora(Hora hora);
+  Hora getHora();
 
-    void setIdMedico(int idMedico);
-    int getIdMedico();
+  void setDisponible(bool disponible);
+  bool getDisponible();
 
-    void setFecha(Fecha fecha);
-    Fecha getFecha();
+  void setEstado(bool estado);
+  bool getEstado();
 
-    void setHora(Hora hora);
-    Hora getHora();
-
-    void setDisponible(bool disponible);
-    bool getDisponible();
-
-    void setEstado(bool estado);
-    bool getEstado();
-
-    void cargar();
-    void mostrar();
-
-
-
-
+  void cargar();
+  void mostrar();
 };

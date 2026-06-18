@@ -2,16 +2,15 @@
 #include "../persistencia/ArchivoAgendaMedico.h"
 #include "../entidades/AgendaMedico.h"
 
-
 class ManagerAgendaMedico{
 private:
-    ArchivoAgendaMedico _repoAgenda;
+  ArchivoAgendaMedico _repoAgenda;
 
 public:
 
-    void cargarAgenda();
-    void listarAgendas();
+  void cargarAgenda();
+  void listarAgendas();
 
-    void modificarAgenda();
-    void eliminarAgenda();
+  void modificarAgenda();
+  void eliminarAgenda();
 };

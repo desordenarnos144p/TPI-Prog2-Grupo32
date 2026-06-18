@@ -1,8 +1,34 @@
-#ifndef PAGO_H_INCLUDED
-#define PAGO_H_INCLUDED
+#pragma once 
 
-#include <iostream>
+#include "../entidades/auxiliares/Fecha.h"
 
-using namespace std;
+class Pago{
+    private:
+        int _idPago;
+        int _idTurno;
+        float _monto;
+        Fecha _fecha;
+        bool _estado;
+    public:
+        //CONSTRUCTORES.
+            Pago();
+            Pago(int idPago, int idTurno, float monto, Fecha fecha, bool estado);
+        //GETTERS Y SETTERS.
+            int getIdPago();
+            void setIdPago(int idPago);
 
-#endif // PAGO_H_INCLUDED
+            int getIdTurno();
+            void setIdTurno(int idTurno);
+
+            float getMonto();
+            void setMonto(float monto);
+
+            Fecha getFecha();
+            void setFecha(Fecha fecha);
+
+            bool getEstado();
+            void setEstado(bool estado);
+        //METODOS.
+            void ingresarDatos();
+            void mostrar();
+};

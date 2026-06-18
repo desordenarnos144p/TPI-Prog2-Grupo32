@@ -1,6 +1,19 @@
-#ifndef MANAGERESPECIALIDAD_H_INCLUDED
-#define MANAGERESPECIALIDAD_H_INCLUDED
+#pragma once
+#include "ArchivoEspecialidad.h"
 
+class ManagerEspecialidad{
+public:
+    ManagerEspecialidad();
+    void cargarEspecialidad();
+    void eliminarEspecialidad();
+    void listar();
+    void modificarEspecialidad();
 
+    //LISTADOS
+    void listadoOrdenadoPorEspecialidad();
 
-#endif // MANAGERESPECIALIDAD_H_INCLUDED
+    //AYUDANTES
+    void pedirEspecialiadNuevaAlUsuario(char* especialidadDestino);
+private:
+    ArchivoEspecialidad _repoEspecialidad;
+};
