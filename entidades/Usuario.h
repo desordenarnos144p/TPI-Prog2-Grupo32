@@ -2,27 +2,32 @@
 class Usuario {
     public:
         Usuario();
-        Usuario(int idUsuario, const char* nombre, const char* usuario, const char* password, int idRol, bool estado);
+        Usuario(int idUsuario,
+                const char* nombre,
+                const char* usuario,
+                const char* password,
+                int idRol,
+                bool estado);
 
-        void setIdUsuario(int id);
+        void setIdUsuario(int idUsusario);
         int getIdUsuario();
 
-        void setNombre(const char* n);
+        void setNombre(const char* nombre);
         const char* getNombre();
 
-        void setUsuario(const char* u);
+        void setUsuario(const char* usuario);
         const char* getUsuario();
 
-        void setPassword(const char* p);
+        void setPassword(const char* password);
         const char* getPassword();
 
-        void setIdRol(int rol);
+        void setIdRol(int idRol);
         int getIdRol();
 
         void setEstado (bool estado);
         bool getEstado();
 
-        void cargar();
+        void ingresarDatos();
         void mostrar();
 
 private:

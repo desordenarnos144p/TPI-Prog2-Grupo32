@@ -1,72 +1,143 @@
+#include <cstdio>
 #include "ArchivoUsuario.h"
-#include "../entidades/Usuario.h"
+#include <cstring>
 
-//CONSTRUCTOR.
-    ArchivoUsuario::ArchivoUsuario(std::string nombre)
-        :_nombreArchivo(nombre){
-    }//(?)
+ArchivoUsuario::ArchivoUsuario(const char* nombreArchivo)
+{
+    strcpy(_nombreArchivo, nombreArchivo);
+}
 
-//GETTERS,
-    //AGREGAR: int getNuevoId();
+bool ArchivoUsuario::guardar(Usuario reg) {
+    FILE *pUser;
 
-    int ArchivoUsuario::getCantidadRegistros(){
-        FILE *pUser;
-        int tamTotal;
-        pUser = fopen(_nombreArchivo.c_str(), "rb");
-        if(pUser == nullptr){
-            return 0;
-        }
-        fseek(pUser, 0, SEEK_END);
-        tamTotal = ftell(pUser) / sizeof(Usuario);
-        fclose(pUser);
-        return tamTotal;
+    int nuevoId = getCantidadRegistros() + 1;
+    reg.setIdUsuario(nuevoId);
+     pUser = fopen(_nombreArchivo, "ab");
+
+    if (pUser == nullptr){
+     return false;
     }
 
-//METODOS.
-    bool ArchivoUsuario::guardar(Usuario obj){
-        FILE *pUser;
-        pUser = fopen(_nombreArchivo.c_str(), "ab");
-        if(pUser == nullptr){
-            return false;
-        }
-        int escribio = fwrite(&obj, sizeof(Usuario), 1, pUser);
-        fclose(pUser);
-        return escribio;
+    bool escribio = fwrite(&reg, sizeof reg, 1, pUser);
+    fclose(pUser);
+    return escribio;
+}
+
+bool ArchivoUsuario::sobreEscribirRegistro(Usuario reg, int pos){
+    FILE *pUser = fopen(_nombreArchivo, "rb+");  // le agrega al modo lo que le falta
+
+    if(pUser == nullptr){
+        return false;
     }
 
-    Usuario ArchivoUsuario::leer(int pos){
-        Usuario obj;
-        FILE *pUser;
-        pUser = fopen(_nombreArchivo.c_str(), "rb");
-        if(pUser == nullptr){
-            return obj;
-        }
-        fseek(pUser, pos * sizeof(Usuario), SEEK_SET);
-        fread(&obj, sizeof(Usuario), 1, pUser);
-        fclose(pUser);
-        return obj;
+    fseek(pUser, pos * sizeof(Usuario), SEEK_SET);
+
+    bool escribio = fwrite(&reg, sizeof(Usuario), 1, pUser);
+
+    fclose(pUser);
+
+    return escribio;
+}
+
+bool ArchivoUsuario::bajaLogicaUsuario(const char* usuario){
+    Usuario reg;
+
+    int pos = buscarUsuario(usuario);
+
+    if(pos==-1){
+        return false;
     }
 
-    int ArchivoUsuario::buscarPosicion(int id){
-        int total = getCantidadRegistros();
-        for(int i = 0; i < total; i++){
-            Usuario obj = leer(i);
-            if(obj.getIdUsuario() == id && obj.getEstado() == true){
-                return i;
-            }
-        }
+    reg=leer(pos);
+
+    reg.setEstado(false);
+
+    return sobreEscribirRegistro(reg, pos);
+}
+
+Usuario ArchivoUsuario::leer(int pos) {
+    Usuario reg;
+    FILE *pUser = fopen(_nombreArchivo, "rb");
+
+    if (pUser == nullptr){
+     return reg;
+    }
+
+    fseek(pUser, pos * sizeof reg, SEEK_SET);  //SEEK_SET = 0
+
+    fread(&reg, sizeof reg, 1, pUser);
+
+    fclose(pUser);
+
+    return reg;
+}
+
+int ArchivoUsuario::getCantidadRegistros() {
+    FILE *pUser;
+    int tamTotal;
+
+    pUser = fopen(_nombreArchivo, "rb");
+    if (pUser == nullptr){
+     return 0;
+    }
+
+    fseek(pUser, 0, SEEK_END);
+    tamTotal = ftell(pUser) / sizeof(Usuario);
+    fclose(pUser);
+    return tamTotal;
+}
+
+
+int ArchivoUsuario::buscarUsuario(const char* usuario){
+   Usuario reg;
+    int posicion=0;
+    FILE *pUser=fopen(_nombreArchivo, "rb");
+
+    if(pUser==nullptr){
         return -1;
     }
 
-    bool ArchivoUsuario::modificar(Usuario obj, int pos){
-        FILE *pUser = fopen(_nombreArchivo.c_str(), "rb+");
-        if(pUser == nullptr){
-            return false;
+    while(fread(&reg, sizeof reg, 1, pUser)==1){
+        if(strcmp(usuario, reg.getUsuario())==0){
+            fclose(pUser);
+            return posicion;
         }
-        fseek(pUser, pos * sizeof(Usuario), SEEK_SET);
-        bool escribio = fwrite(&obj, sizeof(Usuario), 1, pUser);
-        fclose(pUser);
-        return escribio;
+        posicion++;
     }
+    fclose(pUser);
 
-    //AGREGAR: bool bajaLogica(int posicion);
+    return -1;
+}
+
+void ArchivoUsuario::listar(){
+    Usuario reg;
+    FILE *pUser;
+
+    pUser=fopen(_nombreArchivo, "rb");
+
+    if(pUser==nullptr){
+        return;
+    }
+    while(fread(&reg, sizeof reg, 1, pUser)!=0){
+        reg.mostrar();
+    }
+    fclose(pUser);
+}
+
+void ArchivoUsuario::listarActivos(){
+    Usuario reg;
+    FILE *pUser;
+
+    pUser=fopen(_nombreArchivo, "rb");
+
+    if(pUser==nullptr){
+        return;
+    }
+    while(fread(&reg, sizeof reg, 1, pUser)!=0){
+        if(reg.getEstado()){
+            reg.mostrar();
+        }
+    }
+    fclose(pUser);
+}
+
