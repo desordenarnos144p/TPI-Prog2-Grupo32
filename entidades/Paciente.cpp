@@ -4,7 +4,8 @@
 
 using namespace std;
 
-Paciente::Paciente(){
+Paciente::Paciente()
+{
 
     _idPaciente = 0;
     _idObraSocial = 0;
@@ -24,7 +25,8 @@ Paciente::Paciente(
     const char* apellido,
     const char* telefono,
     bool estado
-) : Persona(dni, nombre, apellido, telefono, estado){
+) : Persona(dni, nombre, apellido, telefono, estado)
+{
 
     _idPaciente = idPaciente;
     _idObraSocial = idObraSocial;
@@ -35,47 +37,58 @@ Paciente::Paciente(
     _fechaNacimiento = fechaNacimiento;
 }
 
-void Paciente::setIdPaciente(int idPaciente){
+void Paciente::setIdPaciente(int idPaciente)
+{
     _idPaciente = idPaciente;
 }
 
-int Paciente::getIdPaciente(){
+int Paciente::getIdPaciente()
+{
     return _idPaciente;
 }
 
-void Paciente::setIdObraSocial(int idObraSocial){
+void Paciente::setIdObraSocial(int idObraSocial)
+{
     _idObraSocial = idObraSocial;
 }
 
-int Paciente::getIdObraSocial(){
+int Paciente::getIdObraSocial()
+{
     return _idObraSocial;
 }
 
-void Paciente::setNroAfiliado(const char* nroAfiliado){
+void Paciente::setNroAfiliado(const char* nroAfiliado)
+{
     strcpy(_nroAfiliado, nroAfiliado);
 }
 
-const char* Paciente::getNroAfiliado(){
+const char* Paciente::getNroAfiliado()
+{
     return _nroAfiliado;
 }
 
-void Paciente::setAntecedentes(const char* antecedentes){
+void Paciente::setAntecedentes(const char* antecedentes)
+{
     strcpy(_antecedentes, antecedentes);
 }
 
-const char* Paciente::getAntecedentes(){
+const char* Paciente::getAntecedentes()
+{
     return _antecedentes;
 }
 
-void Paciente::setFechaNacimiento(Fecha fechaNacimiento){
+void Paciente::setFechaNacimiento(Fecha fechaNacimiento)
+{
     _fechaNacimiento = fechaNacimiento;
 }
 
-Fecha Paciente::getFechaNacimiento(){
+Fecha Paciente::getFechaNacimiento()
+{
     return _fechaNacimiento;
 }
 
-void Paciente::cargar(){
+void Paciente::cargar()
+{
 
     Persona::cargar();
 
@@ -94,7 +107,8 @@ void Paciente::cargar(){
     _fechaNacimiento.cargar();
 }
 
-void Paciente::mostrar(){
+void Paciente::mostrar()
+{
 
     Persona::mostrar();
 

@@ -1,6 +1,17 @@
-#ifndef MANAGERAGENDAMEDICO_H_INCLUDED
-#define MANAGERAGENDAMEDICO_H_INCLUDED
+#pragma once
+#include "../persistencia/ArchivoAgendaMedico.h"
+#include "../entidades/AgendaMedico.h"
 
 
+class ManagerAgendaMedico{
+private:
+    ArchivoAgendaMedico _repoAgenda;
 
-#endif // MANAGERAGENDAMEDICO_H_INCLUDED
+public:
+
+    void cargarAgenda();
+    void listarAgendas();
+
+    void modificarAgenda();
+    void eliminarAgenda();
+};

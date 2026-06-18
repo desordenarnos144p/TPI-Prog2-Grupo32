@@ -11,4 +11,12 @@ public:
     void listarPacientes();
     void modificarPaciente();
     void eliminarPaciente();
+
+    //listado de paciente
+
+    void listadoOrdenadoPorApellido();
+
+    //listar por obra social
+
+    //void listadoOrdenadoPorObraSocial();
 };
