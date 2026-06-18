@@ -1,17 +1,13 @@
 #include <iostream>
-#include "entidades/Paciente.h"
+#include "controladores/ManagerPaciente.h"
 
 using namespace std;
 
 int main(){
 
-    Paciente p;
+    ManagerPaciente managerPaciente;
 
-    p.cargar();
-
-    cout << endl;
-
-    p.mostrar();
+    managerPaciente.listadoOrdenadoPorApellido();
 
     return 0;
 }
