@@ -4,7 +4,7 @@
 
 class ArchivoPaciente{
     private:
-        char _nombreArchivo[20];
+        char _nombreArchivo[20]; //CAMBIAR A 50, TODOS SON DE 50
     public:
         //CONSTRUCTOR.
             ArchivoPaciente(const char* nombreArchivo = "Pacientes.dat");
