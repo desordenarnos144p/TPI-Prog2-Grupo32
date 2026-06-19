@@ -80,7 +80,7 @@ bool ManagerUsuario::eliminarUsuario()  //FUNCIONA
     }
     Usuario reg = _repoUsuario.leer(pos);
     if(reg.getEstado() == false){                           //consultamos el estado del registro, si esta inactivo salimos
-        cout << "El usuario ya se encuentra dado de baja." << endl
+        cout << "El usuario ya se encuentra dado de baja." << endl;
         return false;
     }
     char opcion;
