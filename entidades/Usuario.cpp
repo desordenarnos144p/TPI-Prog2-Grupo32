@@ -62,9 +62,7 @@ const char* Usuario::getPassword(){
 }
 
 void Usuario::setIdRol(int rol){
-    if(rol == 1 || rol == 2){
-        _idRol = rol;
-    }
+    _idRol = rol;
 }
 
 int Usuario::getIdRol(){
@@ -77,15 +75,16 @@ void Usuario::setEstado (bool estado){
 bool Usuario:: getEstado(){
     return _estado;
 }
-//ingresar datos
-void Usuario::cargar(){
+
+void Usuario::ingresarDatos(){
 
     char auxNombre[50];
     char auxUsuario[50];
     char auxPassword[50];
-    int rol;
+    int idRol;
 
     cout << "Nombre completo: ";
+    cin.ignore();
     cin.getline(auxNombre, 50);
     setNombre(auxNombre);
 
@@ -97,22 +96,22 @@ void Usuario::cargar(){
     cin.getline(auxPassword, 50);
     setPassword(auxPassword);
 
-   do{
-    cout << "Rol (1-Medico / 2-Recepcionista): ";
-    cin >> rol;
-    }while(rol != 1 && rol != 2);
+    cout << "Ingrese Rol de Usuario (1:Adiministrador 2:Medico 3:Paciente): "; // ACÁ VA EL LISTADO DE ROLES DESDE ManagerRol
+    cin >> idRol;
 
-    setIdRol(rol);
+    setIdRol(idRol);
+
     setEstado(true);
 }
 
-void Usuario::mostrar(){
-    cout << " --------------------------------------------------" << endl;
-    cout << "DATOS DE USUARIO:" << endl;
+void Usuario::mostrar(){  // metodo para mostrar datos de usuarios registrados en listar()
+  //  cout << " --------------------------------------------------" << endl;
+    cout << "DATOS DE USUARIO:" << endl<<endl;
     cout << "ID Usuario: " << _idUsuario << endl;
     cout << "Usuario: " << _usuario << endl;
     cout << "Nombre: " << _nombre << endl;
     cout << "Rol: " << _idRol << endl;
+    cout << "Contrasenia: " << _password << endl;
     cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
     cout << " --------------------------------------------------" << endl;
 }
