@@ -7,19 +7,19 @@ ArchivoUsuario::ArchivoUsuario(const char* nombreArchivo)
     strcpy(_nombreArchivo, nombreArchivo);
 }
 
-bool ArchivoUsuario::guardar(Usuario reg) {
-    FILE *pUser;
+bool ArchivoUsuario::guardar(Usuario reg){
+    reg.setIdUsuario(getNuevoId());
 
-    int nuevoId = getCantidadRegistros() + 1;
-    reg.setIdUsuario(nuevoId);
-     pUser = fopen(_nombreArchivo, "ab");
+    FILE *pUser = fopen(_nombreArchivo, "ab");
 
-    if (pUser == nullptr){
-     return false;
+    if(pUser == nullptr){
+        return false;
     }
 
     bool escribio = fwrite(&reg, sizeof reg, 1, pUser);
+
     fclose(pUser);
+
     return escribio;
 }
 
@@ -37,6 +37,24 @@ bool ArchivoUsuario::sobreEscribirRegistro(Usuario reg, int pos){
     fclose(pUser);
 
     return escribio;
+}
+
+bool ArchivoUsuario::altaLogicaUsuario(const char* usuario){
+    Usuario reg;
+
+    int pos = buscarUsuario(usuario);
+
+    if(pos==-1){
+        return false;
+    }
+
+    reg=leer(pos);
+
+    if(reg.getEstado()==true){
+        return true;
+    }
+    reg.setEstado(true);
+    return sobreEscribirRegistro(reg, pos);
 }
 
 bool ArchivoUsuario::bajaLogicaUsuario(const char* usuario){
@@ -139,5 +157,17 @@ void ArchivoUsuario::listarActivos(){
         }
     }
     fclose(pUser);
+}
+
+int ArchivoUsuario::getNuevoId(){
+    int cantidad = getCantidadRegistros();
+
+    if(cantidad == 0){
+        return 1;
+    }
+
+    Usuario ultimo = leer(cantidad - 1);
+
+    return ultimo.getIdUsuario() + 1;
 }
 
