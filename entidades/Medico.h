@@ -11,6 +11,7 @@ public:
     void setIdMedico(int idMedico);
     int getIdMedico();
 
+
     void setMatricula(const char* matricula);
     const char* getMatricula();
 

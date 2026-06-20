@@ -1,4 +1,4 @@
-#include "EspecialidadArchivo.h"
+#include "ArchivoEspecialidad.h"
 #include <stdio.h>
 #include <cstring>
 

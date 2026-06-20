@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-void ManagerPaciente::cargarPaciente() {
+/*void ManagerPaciente::cargarPaciente() {
     Paciente reg;
     int idOS;
 
@@ -24,7 +24,7 @@ void ManagerPaciente::cargarPaciente() {
     // seguir cargando el resto de los datos...
 
     _archivoPaciente.guardar(reg);
-}
+}*/
 
 void ManagerPaciente::modificarPaciente()
 {

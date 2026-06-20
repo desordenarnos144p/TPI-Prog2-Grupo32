@@ -39,7 +39,6 @@
 		<Unit filename="controladores/ManagerMedico.cpp" />
 		<Unit filename="controladores/ManagerMedico.h" />
 		<Unit filename="controladores/ManagerObrasSocial.cpp" />
-		<Unit filename="controladores/ManagerObrasSocial.h" />
 		<Unit filename="controladores/ManagerPaciente.cpp" />
 		<Unit filename="controladores/ManagerPaciente.h" />
 		<Unit filename="controladores/ManagerPago.cpp" />
