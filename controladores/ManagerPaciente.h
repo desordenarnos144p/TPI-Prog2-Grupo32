@@ -2,26 +2,25 @@
 
 #include "../persistencia/ArchivoPaciente.h"
 
-class ManagerPaciente{
+class ManagerPaciente
+{
 private:
-  ArchivoPaciente _repoPaciente;
+    ArchivoPaciente _repoPaciente;
 
 public:
-  //CONSTRUCTOR
-  ManagerPaciente();
+    void cargarPaciente(); //implementar luego alta logica y comprobar si el paciente ya esta cargado
+    void listarPacientes();
+    void modificarPaciente();
+    void eliminarPaciente();
 
-  //METODOS
-  void cargarPaciente();
-  void listarPacientes();
-  void modificarPaciente();
-  void eliminarPaciente();
 
-  void listadoOrdenadoPorApellido();
+//Listados
+    void listadoOrdenadoPorApellido();
+    void listadoOrdenadoPorObraSocial();
+    void listadoOrdenadoPorEdad();
 
-  // METODOS PENDIENTES DE IMPLEMENTAR (COMENTADOS):
-  // Paciente buscarPorId(int id);
-  // bool existe(int id);
-  // void listarPorNombre();
-  // void listarPorEdad();
-  // void listarPorObraSocial();
+//Consultas
+
+    void consultarPacientePorDni();
+    void consultarPacientePorAfiliado();
 };
