@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ManagerTurno.h"
-#include "entidades/auxiliares/Fecha.h"
-#include "entidades/auxiliares/Hora.h"
+#include "../entidades/auxiliares/Fecha.h"
+#include "../entidades/auxiliares/Hora.h"
 
 using namespace std;
 
@@ -9,10 +9,10 @@ using namespace std;
     ManagerTurno::ManagerTurno(){}
 //METODOS.
     bool ManagerTurno::agregar(){
-    Turno reg; 
+    Turno reg;
     reg.ingresarDatos();
     reg.setIdTurno(_repoTurno.getNuevoId());
-    bool exito = _repoTurno.guardar(reg); 
+    bool exito = _repoTurno.guardar(reg);
     if (exito){
         cout << "\nTurno registrado correctamente!" << endl;
         return true;
@@ -22,7 +22,7 @@ using namespace std;
     }
 }
 
-bool ManagerTurno::modificar(){ 
+bool ManagerTurno::modificar(){
     int id;
     cout << "---MODIFICAR TURNO---" << endl;
     cout << "Ingrese el ID del turno a modificar: ";
@@ -85,7 +85,7 @@ Turno ManagerTurno::buscarPorId(int id){
 
 bool ManagerTurno::existe(int id){
     Turno reg = buscarPorId(id);
-    if (reg.getIdTurno() != -1){ 
+    if (reg.getIdTurno() != -1){
         return true;
     }
     return false;
@@ -117,7 +117,7 @@ void ManagerTurno::listarPorFecha(){
     cout << "\n---LISTADO DE TURNOS PARA LA FECHA SELECCIONADA---" << endl;
     for(int i = 0; i < cantidad; i++) {
         Turno reg = _repoTurno.leer(i);
-        if(reg.getEstado() == true && 
+        if(reg.getEstado() == true &&
             reg.getFecha().getDia() == fechaBusqueda.getDia() &&
             reg.getFecha().getMes() == fechaBusqueda.getMes() &&
             reg.getFecha().getAnio() == fechaBusqueda.getAnio()){

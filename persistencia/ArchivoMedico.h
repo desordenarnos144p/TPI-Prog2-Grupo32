@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../entidades/Medico.h"
 class ArchivoMedico{
         private:
             char _nombreArchivo[20];
@@ -10,10 +10,11 @@ class ArchivoMedico{
             int getNuevoId();
             int getCantidadRegistros();
         //METODOS.
-            bool guardar(const Medico &reg);
+            bool guardar(const Medico reg);
             Medico leer(int pos);
             //AGREGAR: int buscarPosicion(int id);
             bool modificar(const Medico &reg, int pos);
             //AGREGAR: bool bajaLogica(int posicion);
             int buscarPosicion(int id);
+            int buscarMedico(const char* matricula); //agregue porque daba error (rodrigo)
 };

@@ -1,5 +1,5 @@
 #pragma once
-#include "persistencia/ArchivoPago.h"
+#include "../persistencia/ArchivoPago.h"
 #include "../entidades/Pago.h"
 
 class ManagerPago{

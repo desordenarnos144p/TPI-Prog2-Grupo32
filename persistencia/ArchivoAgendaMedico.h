@@ -4,25 +4,21 @@
 
 class ArchivoAgendaMedico{
 private:
-  char _nombreArchivo[30];
+    char _nombreArchivo[30];
 
 public:
-  ArchivoAgendaMedico(
-    const char* nombreArchivo = "AgendaMedico.dat"
-  );
 
-  bool guardar(AgendaMedico reg);
+    ArchivoAgendaMedico(const char* nombreArchivo = "AgendaMedico.dat");
 
-  AgendaMedico leer(int pos);
+    bool guardar(AgendaMedico reg);
 
-  bool modificar(
-    AgendaMedico reg,
-    int pos
-  );
+    AgendaMedico leer(int pos);
 
-  int getCantidadRegistros();
+    bool modificar(AgendaMedico reg,int pos);
 
-  int getNuevoId();
+    int getCantidadRegistros();
 
-  int buscarPorId(int idAgenda);
+    int getNuevoId();
+
+    int buscarPorId(int idAgenda);
 };

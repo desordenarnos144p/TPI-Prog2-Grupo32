@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "ManagerEspecialidad.h"
-#include "Especialidad.h"
+#include "../entidades/Especialidad.h"
 using namespace std;
 
 ManagerEspecialidad::ManagerEspecialidad()

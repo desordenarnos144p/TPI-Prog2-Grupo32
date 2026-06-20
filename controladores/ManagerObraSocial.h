@@ -18,8 +18,8 @@ class ArchivoObraSocial{
 
 //Se desarrollo ArchivoObrasocial en el archivo ManagerObraSocial.
 
-#include "persistencia/ArchivoObraSocial.h"
-#include "entidades/ObraSocial.h"
+#include "../persistencia/ArchivoObraSocial.h"
+#include "../entidades/ObraSocial.h"
 
 class ManagerObraSocial{
     private:

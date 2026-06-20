@@ -1,7 +1,7 @@
 #pragma once
 
-#include "persistencia/ArchivoTurno.h"
-#include "entidades/Turno.h"
+#include "../persistencia/ArchivoTurno.h"
+#include "../entidades/Turno.h"
 
 class ManagerTurno{
     private:

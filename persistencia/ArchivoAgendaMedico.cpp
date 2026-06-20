@@ -3,114 +3,121 @@
 #include <cstring>
 
 ArchivoAgendaMedico::ArchivoAgendaMedico(
-  const char* nombreArchivo
+    const char* nombreArchivo
 )
 {
-  strcpy(_nombreArchivo, nombreArchivo);
+    strcpy(_nombreArchivo, nombreArchivo);
 }
 
 bool ArchivoAgendaMedico::guardar(
-  AgendaMedico reg
+    AgendaMedico reg
 )
 {
-  FILE* pFile = fopen(_nombreArchivo,"ab");
 
-  if(pFile == nullptr)
-  {
-    return false;
-  }
+    FILE* pFile = fopen(_nombreArchivo,"ab");
 
-  bool escribio = fwrite(&reg, sizeof(AgendaMedico), 1, pFile);
+    if(pFile == nullptr)
+    {
+        return false;
+    }
 
-  fclose(pFile);
+    bool escribio = fwrite(&reg, sizeof(AgendaMedico), 1, pFile);
 
-  return escribio;
+    fclose(pFile);
+
+    return escribio;
 }
 
 AgendaMedico ArchivoAgendaMedico::leer(int pos)
+
 {
-  AgendaMedico reg;
 
-  FILE* pFile = fopen(_nombreArchivo,"rb");
+    AgendaMedico reg;
 
-  if(pFile == nullptr)
-  {
+    FILE* pFile = fopen(_nombreArchivo,"rb");
+
+
+    if(pFile == nullptr)
+    {
+        return reg;
+    }
+
+    fseek(pFile,sizeof(AgendaMedico) * pos,SEEK_SET);
+
+    fread(&reg,sizeof(AgendaMedico),1,pFile);
+
+    fclose(pFile);
+
     return reg;
-  }
-
-  fseek(
-    pFile,
-    sizeof(AgendaMedico) * pos, SEEK_SET
-  );
-
-  fread(&reg, sizeof(AgendaMedico), 1, pFile);
-
-  fclose(pFile);
-
-  return reg;
 }
 
 bool ArchivoAgendaMedico::modificar(
-  AgendaMedico reg,
-  int pos
+    AgendaMedico reg,
+    int pos
 )
 {
-  FILE* pFile = fopen(_nombreArchivo,"rb+" );
 
-  if(pFile == nullptr)
-  {
-    return false;
-  }
+    FILE* pFile = fopen(_nombreArchivo,"rb+" );
 
-  fseek(pFile, sizeof(AgendaMedico) * pos, SEEK_SET);
+    if(pFile == nullptr)
+    {
+        return false;
+    }
 
-  bool escribio = fwrite(&reg, sizeof(AgendaMedico), 1, pFile);
+    fseek( pFile,sizeof(AgendaMedico) * pos, SEEK_SET);
 
-  fclose(pFile);
+    bool escribio = fwrite(&reg,sizeof(AgendaMedico),1,pFile);
 
-  return escribio;
+    fclose(pFile);
+
+    return escribio;
 }
 
 int ArchivoAgendaMedico::getCantidadRegistros()
 {
-  FILE* pFile = fopen(_nombreArchivo,"rb");
 
-  if(pFile == nullptr)
-  {
-    return 0;
-  }
+    FILE* pFile = fopen( _nombreArchivo,"rb");
 
-  fseek(pFile, 0, SEEK_END);
+    if(pFile == nullptr)
+    {
+        return 0;
+    }
 
-  int cantidad = ftell(pFile) / sizeof(AgendaMedico);
+    fseek(pFile,0,SEEK_END);
 
-  fclose(pFile);
+    int cantidad = ftell(pFile) / sizeof(AgendaMedico);
 
-  return cantidad;
+    fclose(pFile);
+
+    return cantidad;
 }
 
 int ArchivoAgendaMedico::getNuevoId()
 {
-  return getCantidadRegistros() + 1;
+
+    return getCantidadRegistros() + 1;
 }
 
 int ArchivoAgendaMedico::buscarPorId(
-  int idAgenda
+    int idAgenda
 )
 {
-  AgendaMedico reg;
 
-  int cantidad = getCantidadRegistros();
+    AgendaMedico reg;
 
-  for(int i = 0; i < cantidad; i++)
-  {
-    reg = leer(i);
+    int cantidad = getCantidadRegistros();
 
-    if(reg.getIdAgenda() == idAgenda)
+    for(int i = 0; i < cantidad; i++)
     {
-      return i;
-    }
-  }
 
-  return -1;
+        reg = leer(i);
+
+        if( reg.getIdAgenda() == idAgenda)
+
+        {
+            return i;
+        }
+    }
+
+    return -1;
 }

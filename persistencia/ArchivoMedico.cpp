@@ -25,7 +25,7 @@
     }
 
 //METODOS.
-    bool ArchivoMedico::guardar(const Medico &reg){
+    bool ArchivoMedico::guardar(const Medico reg){
         FILE *p = fopen(_nombreArchivo, "ab");
         if(p == nullptr){
             return false;
@@ -72,3 +72,21 @@
         }
         return -1;
     }
+    //lo que agregue en el .h
+    int ArchivoMedico::buscarMedico(const char* matricula)
+{
+    Medico reg;
+    int cant = getCantidadRegistros();
+
+    for(int i=0; i<cant; i++)
+    {
+        reg = leer(i);
+
+        if(strcmp(reg.getMatricula(), matricula) == 0)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
