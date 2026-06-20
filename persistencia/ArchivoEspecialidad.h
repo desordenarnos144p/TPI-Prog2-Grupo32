@@ -1,8 +1,8 @@
 #pragma once
 #include "Especialidad.h"
-class EspecialidadArchivo{
+class ArchivoEspecialidad{
 public:
-    EspecialidadArchivo();
+    ArchivoEspecialidad(const char* nombreArchivo = "Especialidad.dat");
 
     bool guardar(Especialidad reg);
     Especialidad leer(int pos);

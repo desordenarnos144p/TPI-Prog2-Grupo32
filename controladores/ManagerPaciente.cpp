@@ -6,25 +6,24 @@ using namespace std;
 
 
 
-void ManagerPaciente::cargarPaciente()
-{
 
+void ManagerPaciente::cargarPaciente() {
     Paciente reg;
+    int idOS;
 
+    cout << "ID Obra Social: ";
+    cin >> idOS;
 
-
-    reg.cargar();
-
-    reg.setIdPaciente( _repoPaciente.getNuevoId());
-
-    if(_repoPaciente.guardar(reg))
-    {
-        cout << "PACIENTE GUARDADO CORRECTAMENTE" << endl;
+    if (_archivoObraSocial.buscarPorID(idOS) == -1) {
+        cout << "La obra social no existe." << endl;
+        return;
     }
-    else
-    {
-        cout << "ERROR AL GUARDAR PACIENTE" << endl;
-    }
+
+    reg.setIdObraSocial(idOS);
+
+    // seguir cargando el resto de los datos...
+
+    _archivoPaciente.guardar(reg);
 }
 
 void ManagerPaciente::modificarPaciente()

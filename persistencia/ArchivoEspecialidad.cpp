@@ -1,13 +1,13 @@
-#include "ArchivoEspecialidad.h"
+#include "EspecialidadArchivo.h"
 #include <stdio.h>
 #include <cstring>
 
-EspecialidadArchivo::EspecialidadArchivo()
+ArchivoEspecialidad::ArchivoEspecialidad(const char* nombreArchivo)
 {
-    std::strcpy(_nombreArchivo, "Especialidad.dat");
+    std::strcpy(_nombreArchivo, nombreArchivo);
 }
 
-bool EspecialidadArchivo::guardar(Especialidad reg)
+bool ArchivoEspecialidad::guardar(Especialidad reg)
 {
     FILE *p = fopen(_nombreArchivo, "ab");
     if(p == nullptr)
@@ -19,7 +19,7 @@ bool EspecialidadArchivo::guardar(Especialidad reg)
     return cant;
 }
 
-Especialidad EspecialidadArchivo::leer(int pos)
+Especialidad ArchivoEspecialidad::leer(int pos)
 {
     Especialidad reg;
     FILE *p = fopen(_nombreArchivo, "rb");
@@ -33,7 +33,7 @@ Especialidad EspecialidadArchivo::leer(int pos)
     return reg;
 }
 
-int EspecialidadArchivo::getCantidadRegistros()
+int ArchivoEspecialidad::getCantidadRegistros()
 {
     FILE *p = fopen(_nombreArchivo, "rb");
     if(p == nullptr)
@@ -46,7 +46,7 @@ int EspecialidadArchivo::getCantidadRegistros()
     return tamTotal;
 }
 
-bool EspecialidadArchivo::modificar(const Especialidad &reg, int pos)
+bool ArchivoEspecialidad::modificar(const Especialidad &reg, int pos)
 {
     FILE *p = fopen(_nombreArchivo, "rb+");
     if(p == nullptr)
@@ -59,14 +59,14 @@ bool EspecialidadArchivo::modificar(const Especialidad &reg, int pos)
     return escribio;
 }
 
-int EspecialidadArchivo::getNuevoId()
+int ArchivoEspecialidad::getNuevoId()
 {
     return getCantidadRegistros() + 1;
 }
 
 
 
-int EspecialidadArchivo::buscarEspecialidad(const char* especialidad){
+int ArchivoEspecialidad::buscarEspecialidad(const char* especialidad){
     Especialidad reg;
     int cant = getCantidadRegistros();
 

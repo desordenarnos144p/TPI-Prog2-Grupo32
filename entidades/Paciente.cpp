@@ -12,7 +12,7 @@ Paciente::Paciente()
   strcpy(_antecedentes, "SIN ANTECEDENTES");
 }
 
-Paciente::Paciente(
+Paciente::Paciente( //EN EL SEGUNDO CONSTRUCTOR DEBERIAMOS LLAMAR A LOS SETTER, VERIFICAR!!
   int idPaciente,
   int idObraSocial,
   const char* nroAfiliado,

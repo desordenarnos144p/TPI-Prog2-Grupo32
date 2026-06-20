@@ -2,21 +2,19 @@
 #include <string>
 #include "../entidades/Usuario.h"
 
-class ArchivoUsuario{
+class ArchivoUsuario {
+public:
+        ArchivoUsuario(const char* nombreArchivo = "Usuarios.dat");
+        bool guardar(Usuario reg);
+        bool sobreEscribirRegistro(Usuario reg, int pos);
+        Usuario leer(int pos);
+        bool bajaLogicaUsuario(const char* usuario);
+        void listar();
+        void listarActivos();
+        int getCantidadRegistros();
+        int buscarUsuario(const char* usuario);
     private:
-        std::string _nombreArchivo; //Los _nombreArchivo son de tipo char
-    public:
-        //CONSTRUCTOR.    
-            ArchivoUsuario(std::string nombre = "Usuario.dat");
-        //GETTERS.
-            //AGREGAR: int getNuevoId();
-            int getCantidadRegistros();
-        //METODOS.
-            bool guardar(Usuario obj);
-            Usuario leer(int pos);
-            int buscarPosicion(int id);
-            bool modificar(Usuario obj, int pos);
-            //AGREGAR: bool bajaLogica(int posicion);
+         char _nombreArchivo[20];
 };
 
 
