@@ -1,5 +1,5 @@
 #pragma once
-
+#include "persistencia/ArchivoEspecialidad.h"
 #include "persistencia/ArchivoMedico.h"
 #include "entidades/Medico.h"
 //#include "EspecialidadArchivo.h" //¿Por que se incluye especialidad archivo?

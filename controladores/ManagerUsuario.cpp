@@ -88,6 +88,7 @@ bool ManagerUsuario::eliminarUsuario()  //FUNCIONA
         return false;
     }
     Usuario reg = _repoUsuario.leer(pos);
+
     if(reg.getEstado() == false)                            //consultamos el estado del registro, si esta inactivo salimos
     {
         cout<<"El usuario ya se encuentra dado de baja."<<endl;
@@ -182,31 +183,32 @@ Usuario ManagerUsuario::login()   //FUNCIONA
 
                                                                             // preguntamos el estado del registro
 
-    if(reg.getEstado() == false)       // controlar si el usuario esta de baja
+    if(reg.getEstado() == false)
+{
+    char opcion;
+    cout<<"Usuario dado de baja."<<endl;
+    cout<<"Desea reactivarla? (presione 'S' o 's' para reactivar, presione cualquier otra tecla para salir): ";
+    cin>>opcion;
+    cin.ignore();
+    system("pause");
+    system("cls");
+
+    if(opcion == 'S' || opcion == 's')
     {
-        char opcion;
-        cout<<"Usuario dado de baja."<<endl;
-        cout<<"Desea reactivarla? (presione 'S' o 's' para reactivar, presione cualquier otra tecla para salir): ";
-        cin>>opcion;
-        cin.ignore();
-        system("pause");
-        system("cls");
+        bool exito = _repoUsuario.altaLogicaUsuario(usuario);
 
-        if(opcion == 'S' || opcion == 's')
+        if(exito)
         {
-            bool exito = _repoUsuario.altaLogicaUsuario(usuario);   //si hubo exito en dar la logica informamos, tambien si hubo un error
-            if(exito)
-            {
-                cout<<"Cuenta reactivada nuevamente."<<endl;
-                reg= _repoUsuario.leer(pos);
-
-            }
-        else
-        {
-            cout<<"Se cancelo el proceso de reactivacion de la cuenta, volviendo..."<<endl;
-            return Usuario();      // sale del proceso sino presiono 's' o 'S'
+            cout<<"Cuenta reactivada nuevamente."<<endl;
+            reg = _repoUsuario.leer(pos);
         }
     }
+    else
+    {
+        cout<<"Se cancelo el proceso de reactivacion de la cuenta, volviendo..."<<endl;
+        return Usuario();
+    }
+}
     cout<<"Contrasenia: ";
     cin.getline(password,50);       //ACA SERIA LA VERIFICACION DE CONTRASEÑA
     system("pause");
