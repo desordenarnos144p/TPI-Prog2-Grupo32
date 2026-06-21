@@ -9,13 +9,12 @@ Usuario::Usuario()
     _idUsuario=0;
     _idRol=0;
     _estado = false;
-    std::strcpy(_usuario, "");
-    std::strcpy(_nombre, "");
-    std::strcpy(_password, "");
+    strcpy(_usuario, "");
+    strcpy(_nombre, "");
+    strcpy(_password, "");
 }
 
-Usuario::Usuario(int idUsuario, const char* nombre, const char* usuario, const char* password, int idRol, bool estado)
-{
+Usuario::Usuario(int idUsuario, const char* nombre, const char* usuario, const char* password, int idRol, bool estado){
     setIdUsuario(idUsuario);
     setIdRol(idRol);
     setEstado(estado);
@@ -84,22 +83,17 @@ void Usuario::ingresarDatos(){
     int idRol;
 
     cout << "Nombre completo: ";
-    cin.ignore();
     cin.getline(auxNombre, 50);
     setNombre(auxNombre);
-
-    cout << "Nombre de usuario: ";
-    cin.getline(auxUsuario, 50);
-    setUsuario(auxUsuario);
 
     cout << "Password: ";
     cin.getline(auxPassword, 50);
     setPassword(auxPassword);
 
-    cout << "Ingrese Rol de Usuario (1:Adiministrador 2:Medico 3:Paciente): "; // ACÁ VA EL LISTADO DE ROLES DESDE ManagerRol
+    cout <<  "Ingrese Rol de Usuario (OPCION 1:Admnistrador ||OPCION 2:Medico ||OPCION 3:Paciente): "; // ACÁ VA EL LISTADO DE ROLES DESDE ManagerRol
     cin >> idRol;
-
     setIdRol(idRol);
+    cin.ignore();
 
     setEstado(true);
 }
@@ -110,7 +104,7 @@ void Usuario::mostrar(){  // metodo para mostrar datos de usuarios registrados e
     cout << "ID Usuario: " << _idUsuario << endl;
     cout << "Usuario: " << _usuario << endl;
     cout << "Nombre: " << _nombre << endl;
-    cout << "Rol: " << _idRol << endl;
+    cout << "Rol (1. Admin // 2. Medico // 3. Paciente) : " << _idRol << endl;
     cout << "Contrasenia: " << _password << endl;
     cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
     cout << " --------------------------------------------------" << endl;
