@@ -1,6 +1,14 @@
-#ifndef MENUPRINCIPAL_H_INCLUDED
-#define MENUPRINCIPAL_H_INCLUDED
+#pragma once
+#include "Menu.h"
+#include "ManagerUsuario.h"
+class MenuPrincipal : public Menu{
+public:
+    MenuPrincipal();
 
+protected:
+    void mostrarOpciones() override;
+    void ejecutarOpciones(int opcion) override;
 
-
-#endif // MENUPRINCIPAL_H_INCLUDED
+private:
+    ManagerUsuario _managerUsuario; //EL MENU PRINCIPAL SE CONECTA CON MANAGER USUARIO
+};

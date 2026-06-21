@@ -1,5 +1,5 @@
 #pragma once
-#include "ArchivoEspecialidad.h"
+#include "../persistencia/ArchivoEspecialidad.h"
 
 class ManagerEspecialidad{
 public:

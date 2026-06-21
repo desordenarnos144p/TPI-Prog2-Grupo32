@@ -5,10 +5,10 @@ using namespace std;
 
 Persona::Persona()
 {
-    std::strcpy(_dni, "0");
-    std::strcpy(_nombre, "Sin nombre");
-    std::strcpy(_apellido, "Sin apellido");
-    std::strcpy(_telefono, "0");
+    strcpy(_dni, "0");
+    strcpy(_nombre, "Sin nombre");
+    strcpy(_apellido, "Sin apellido");
+    strcpy(_telefono, "0");
     _estado = false;
 }
 

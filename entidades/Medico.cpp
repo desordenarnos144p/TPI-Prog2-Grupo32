@@ -127,4 +127,10 @@ void Medico::mostrar()
 
 bool Medico::validarMatricula(const char* matricula)
 {
-  while(strcmp(matricula
+    while(strcmp(matricula, "0") <= 0)
+    {
+        return false;
+    }
+
+    return true;
+}

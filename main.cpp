@@ -3,11 +3,15 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 
-    ManagerPaciente managerPaciente;
 
-    managerPaciente.listadoOrdenadoPorApellido();
+
 
     return 0;
 }
+
+
+
+

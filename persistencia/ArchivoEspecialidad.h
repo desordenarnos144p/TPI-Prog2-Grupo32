@@ -1,5 +1,5 @@
 #pragma once
-#include "Especialidad.h"
+#include "../entidades/Especialidad.h"
 class ArchivoEspecialidad{
 public:
     ArchivoEspecialidad(const char* nombreArchivo = "Especialidad.dat");

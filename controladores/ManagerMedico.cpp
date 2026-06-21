@@ -1,12 +1,14 @@
 #include <iostream>
+#include <cstring>
 #include "ManagerMedico.h"
 
 using namespace std;
 
 //CONSTRUCTOR.
-    ManagerMedico::ManagerMedico(){
-        : _repoMedico(), _repoEspecialidad() //(?)
-    }
+   ManagerMedico::ManagerMedico()
+    : _repoMedico(), _repoEspecialidad()
+{
+}
 //METODOS.
     void ManagerMedico::agregar(){ //(?)
         Medico med;
@@ -109,7 +111,7 @@ using namespace std;
         Medico aux;
         for(int i = 0; i < cant-1; i++){
             for(int x = i+1; x < cant; x++){
-                if(strcpy(medPuntero[i].getApellido(), medPuntero[x].getApellido()) > 0){
+                if(strcmp(medPuntero[i].getApellido(), medPuntero[x].getApellido()) > 0){
                     aux = medPuntero[i];
                     medPuntero[i] = medPuntero[x];
                     medPuntero[x] = aux;

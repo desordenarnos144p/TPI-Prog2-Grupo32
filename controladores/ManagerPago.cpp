@@ -1,6 +1,6 @@
 #include <iostream>
 #include "ManagerPago.h"
-#include "entidades/auxiliares/Fecha.h"
+#include "../entidades/auxiliares/Fecha.h"
 
 using namespace std;
 
@@ -8,10 +8,10 @@ using namespace std;
     ManagerPago::ManagerPago(){}
 //METODOS.
     bool ManagerPago::agregar(){
-    Pago reg; 
+    Pago reg;
     reg.ingresarDatos();
     reg.setIdPago(_repoPago.getNuevoId());
-    bool exito = _repoPago.guardar(reg); 
+    bool exito = _repoPago.guardar(reg);
     if (exito){
         cout << "\nPago registrado correctamente!" << endl;
         return true;
@@ -21,7 +21,7 @@ using namespace std;
     }
 }
 
-bool ManagerPago::modificar(){ 
+bool ManagerPago::modificar(){
     int id;
     cout << "---MODIFICAR PAGO---" << endl;
     cout << "Ingrese el ID del pago a modificar: ";
@@ -84,7 +84,7 @@ Pago ManagerPago::buscarPorId(int id){
 
 bool ManagerPago::existe(int id){
     Pago reg = buscarPorId(id);
-    if (reg.getIdPago() != -1){ 
+    if (reg.getIdPago() != -1){
         return true;
     }
     return false;
